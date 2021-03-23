@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Youtube Video Info</string>
+    <string name="main_app_title">Youtube Video Info</string>
+    <string name="main_app_credentials">Carregando o Google Play Services para obter as credenciais...</string>
 </resources>

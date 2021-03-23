@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157561675158",
+    "project_id": "youtube-video-info-308418",
+    "storage_bucket": "youtube-video-info-308418.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157561675158:android:b847c74496b872c99a11b7",
+        "android_client_info": {
+          "package_name": "com.gobrito.youtubevideoinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157561675158-e5a0fss298aoarsd57grn9evj6v934es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAnKLvqeHOzWt8_fITJXIl0bnbmkDTi08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157561675158-e5a0fss298aoarsd57grn9evj6v934es.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
