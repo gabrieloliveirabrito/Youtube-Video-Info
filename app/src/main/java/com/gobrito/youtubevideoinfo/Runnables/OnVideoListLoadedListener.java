@@ -2,10 +2,9 @@ package com.gobrito.youtubevideoinfo.Runnables;
 
 import androidx.core.util.Consumer;
 
-import com.gobrito.youtubevideoinfo.Tuples.VideoThumbnailTuple;
-import com.google.api.services.youtube.model.SearchResult;
+import com.gobrito.youtubevideoinfo.Tuples.SearchVideoChannelTuple;
 
 import java.util.List;
 
-public interface OnVideoListLoadedListener extends Consumer<List<SearchResult>> {
+public interface OnVideoListLoadedListener extends Consumer<List<SearchVideoChannelTuple>> {
 }

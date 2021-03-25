@@ -1,9 +1,8 @@
-package com.gobrito.youtubevideoinfo;
+package com.gobrito.youtubevideoinfo.Activities;
 
 import android.accounts.AccountManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,6 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.gobrito.youtubevideoinfo.Activities.VideoListActivity;
+import com.gobrito.youtubevideoinfo.AppController;
+import com.gobrito.youtubevideoinfo.GoogleServices;
+import com.gobrito.youtubevideoinfo.R;
 import com.google.android.gms.common.SignInButton;
 
 import java.util.List;

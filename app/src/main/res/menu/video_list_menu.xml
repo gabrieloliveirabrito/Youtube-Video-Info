@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/video_list_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Pesquisar"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        />
+    <item
+        android:id="@+id/video_list_item_advanced_search"
+        android:icon="@drawable/ic_baseline_manage_search_24"
+        android:title="Pesquisa avançada"
+        app:showAsAction="ifRoom" />
+
+    <item
+    android:id="@+id/video_list_item_most_rated"
+    android:icon="@drawable/ic_baseline_local_fire_department_24"
+    android:title="Em alta"
+    app:showAsAction="ifRoom" />
+</menu>

@@ -36,6 +36,10 @@ public class AppController extends Application {
         preferences = new Preferences(context);
     }
 
+    public static Context getContext() {
+        return context;
+    }
+
     public static Gson getGson() {
         return gson;
     }

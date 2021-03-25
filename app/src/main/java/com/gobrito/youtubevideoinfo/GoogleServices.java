@@ -14,8 +14,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -25,7 +23,6 @@ import com.google.api.services.youtube.YouTubeRequestInitializer;
 import com.google.api.services.youtube.YouTubeScopes;
 import com.google.common.io.BaseEncoding;
 
-import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -63,19 +60,17 @@ public class GoogleServices {
         if (!isGooglePlayServicesAvailable()) {
             acquireGooglePlayServices();
             return GServicesInitResult.FAILED;
-        } else if (mCredential.getSelectedAccountName() == null || mCredential.getSelectedAccountName().isEmpty()) {
-            return chooseAccount();
         } else if (!isDeviceOnline()) {
             return GServicesInitResult.NO_NETWORK;
         } else {
-           return GServicesInitResult.OK;
+            return GServicesInitResult.OK;
         }
     }
 
-    private String getSHA1(String packageName){
+    private String getSHA1(String packageName) {
         try {
             Signature[] signatures = context.getPackageManager().getPackageInfo(packageName, PackageManager.GET_SIGNATURES).signatures;
-            for (Signature signature: signatures) {
+            for (Signature signature : signatures) {
                 MessageDigest md;
                 md = MessageDigest.getInstance("SHA-1");
                 md.update(signature.toByteArray());
@@ -92,14 +87,14 @@ public class GoogleServices {
     public void initializeYoutubeService() {
         HttpTransport transport = AndroidHttp.newCompatibleTransport();
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
-        youtubeService = new YouTube.Builder(transport, jsonFactory, mCredential)
+        youtubeService = new YouTube.Builder(transport, jsonFactory, null)
                 .setApplicationName("Youtube Video Info")
                 .setHttpRequestInitializer(request -> {
                     String packageName = context.getPackageName();
                     String SHA1 = getSHA1(packageName);
 
                     request.getHeaders().set("X-Android-Package", packageName);
-                    request.getHeaders().set("X-Android-Cert",SHA1);
+                    request.getHeaders().set("X-Android-Cert", SHA1);
                 })
                 .setYouTubeRequestInitializer(new YouTubeRequestInitializer(Constants.GoogleApiKey))
                 .build();
