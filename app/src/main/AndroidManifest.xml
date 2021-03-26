@@ -14,12 +14,16 @@
         android:roundIcon="@drawable/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YoutubeVideoInfo">
+        <activity android:name=".Activities.ThumbnailViewActivity"></activity>
+        <activity android:name=".Activities.ThumbnailsActivity" />
         <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activities.VideoInfoActivity" />
         <activity android:name=".Activities.VideoListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

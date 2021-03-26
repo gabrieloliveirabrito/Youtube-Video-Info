@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.VideoInfoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/video_info_appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/video_info_appbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Dark"
+            app:title="Informações do vídeo"></androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingHorizontal="9dp"
+        android:paddingVertical="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/video_info_appbar_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Informações principais"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_etag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ETag: "
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Informações internas"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/video_info_snippet_published_at"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Publicado em: "
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/video_info_snippet_channel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Canal: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_snippet_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_snippet_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrição: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_snippet_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tags: "
+                android:textIsSelectable="true" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

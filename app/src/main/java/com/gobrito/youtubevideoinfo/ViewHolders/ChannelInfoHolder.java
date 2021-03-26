@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.gobrito.youtubevideoinfo.AppController;
 import com.gobrito.youtubevideoinfo.AsyncTasks.DownloadImageTask;
+import com.gobrito.youtubevideoinfo.Helpers;
 import com.gobrito.youtubevideoinfo.R;
 import com.gobrito.youtubevideoinfo.Tuples.SearchVideoChannelTuple;
 import com.google.android.material.card.MaterialCardView;
@@ -26,6 +27,7 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.unbescape.html.HtmlEscape;
 
+import java.math.BigInteger;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -45,7 +47,7 @@ public class ChannelInfoHolder extends RecyclerView.ViewHolder {
                 String channelId = result.getId().getChannelId();
 
                 if(kind.equals("youtube#video")) {
-                    Intent channelIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://user/" + channelId));
+                    Intent channelIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("youtube://user/" + channelId));
                     channelIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     Context context = AppController.getContext();
@@ -75,11 +77,16 @@ public class ChannelInfoHolder extends RecyclerView.ViewHolder {
 
         this.result = result;
         SearchResultSnippet snippet = result.getSnippet();
+        BigInteger videos = statistics.getVideoCount();
+        BigInteger views = statistics.getViewCount();
+        BigInteger subscribers = statistics.getSubscriberCount();
 
-        String infoText = String.format("%d inscritos - %d vídeos", statistics.getSubscriberCount(), statistics.getVideoCount());
+        String infoText = String.format("%s visualizações - %s vídeos",
+                Helpers.createString(views), Helpers.createString(videos));
 
         titleTextView.setText(HtmlEscape.unescapeHtml(snippet.getTitle()));
         infoTextView.setText(infoText);
+        subscribersTextView.setText(String.format("%s inscritos", Helpers.createString(subscribers)));
 
         new DownloadImageTask(photoView).execute(snippet.getThumbnails());
     }

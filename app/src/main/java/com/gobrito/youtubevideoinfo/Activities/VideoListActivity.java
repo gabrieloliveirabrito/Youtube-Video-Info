@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gobrito.youtubevideoinfo.AppController;
 import com.gobrito.youtubevideoinfo.AsyncTasks.YoutubeSearchListTask;
 import com.gobrito.youtubevideoinfo.Dialogs.VideoAdvancedSearch;
+import com.gobrito.youtubevideoinfo.GoogleServices;
 import com.gobrito.youtubevideoinfo.ListAdapters.VideoListAdapter;
 import com.gobrito.youtubevideoinfo.R;
 import com.gobrito.youtubevideoinfo.Tuples.SearchVideoChannelTuple;
@@ -54,13 +55,21 @@ public class VideoListActivity extends AppCompatActivity {
         videoListAdapter = new VideoListAdapter(this, videoList);
         videoListRecycler.setAdapter(videoListAdapter);
         videoListRecycler.setLayoutManager(new LinearLayoutManager(this));
-        videoListRecycler.setHasFixedSize(true);
-        videoListRecycler.setItemViewCacheSize(20);
+        videoListRecycler.setItemViewCacheSize(5);
         videoListRecycler.setDrawingCacheEnabled(true);
         videoListRecycler.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         videoListProgress = findViewById(R.id.video_list_progressbar);
         videoListResponse = findViewById(R.id.video_list_response);
+    }
+
+    @Override
+    public void onBackPressed() {
+        GoogleServices services = AppController.getGoogleServices();
+        if(services == null)
+            super.onBackPressed();
+        else
+            moveTaskToBack(true);
     }
 
     @Override
@@ -70,10 +79,11 @@ public class VideoListActivity extends AppCompatActivity {
         MenuItem item = menu.findItem(R.id.video_list_search);
         SearchView view = (SearchView) item.getActionView();
         view.setQueryHint("Pesquisar");
+
         view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                appBar.collapseActionView();
+                //appBar.collapseActionView();
 
                 lastQuery = query;
                 if (query.isEmpty()) {
@@ -143,7 +153,7 @@ public class VideoListActivity extends AppCompatActivity {
                 YouTube service = AppController.getGoogleServices().getYoutubeService();
                 try {
                     YouTube.Search.List query = service.search().list("snippet");
-                    query.setOrder("rating");
+                    query.setOrder("viewCount");
 
                     videoList.clear();
                     videoListAdapter.notifyDataSetChanged();

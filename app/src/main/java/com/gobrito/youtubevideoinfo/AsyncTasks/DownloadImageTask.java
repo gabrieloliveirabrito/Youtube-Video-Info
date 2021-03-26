@@ -24,6 +24,8 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     protected Bitmap doInBackground(String... urls) {
         for(String url : urls) {
             try {
+                target.setTag(url);
+
                 InputStream downloadStream = new URL(url).openStream();
                 return BitmapFactory.decodeStream(downloadStream);
             } catch (MalformedURLException e) {
