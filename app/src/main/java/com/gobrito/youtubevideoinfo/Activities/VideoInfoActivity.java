@@ -109,7 +109,7 @@ public class VideoInfoActivity extends AppCompatActivity {
             videoInfoContentDetailsDimension.setText("Dimensão: " + contentDetails.getDimension());
             videoInfoContentDetailsDefinition.setText("Definição: " + contentDetails.getDefinition().toUpperCase());
             videoInfoContentDetailsCaption.setText("Legendas: " + (contentDetails.getCaption().equals("true") ? "Sim" : "Não"));
-            videoInfoContentDetailsLicensedContent.setText("Conteúdo licensiado: " + (contentDetails.getLicensedContent() ? "Sim" : "Não"));
+            videoInfoContentDetailsLicensedContent.setText("Conteúdo licenciado: " + (contentDetails.getLicensedContent() ? "Sim" : "Não"));
             videoInfoContentDetailsProjection.setText("Projeção: " + contentDetails.getProjection());
 
             VideoStatistics statistics = video.getStatistics();

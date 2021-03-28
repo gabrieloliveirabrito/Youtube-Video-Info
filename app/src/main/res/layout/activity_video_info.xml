@@ -193,7 +193,7 @@
                 android:id="@+id/video_info_contentDetails_licensedContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Conteúdo licensiado: "
+                android:text="Conteúdo licenciado: "
                 android:textIsSelectable="true" />
 
             <View
