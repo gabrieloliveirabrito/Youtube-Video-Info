@@ -125,7 +125,7 @@ public class VideoListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.video_list_item_advanced_search:
+            /*case R.id.video_list_item_advanced_search:
                 VideoAdvancedSearch advancedSearch = new VideoAdvancedSearch(query -> {
                     if (query != null) {
                         videoList.clear();
@@ -148,7 +148,7 @@ public class VideoListActivity extends AppCompatActivity {
                     }
                 });
                 advancedSearch.show(getSupportFragmentManager(), "videoListActivity");
-                return true;
+                return true;*/
             case R.id.video_list_item_most_rated:
                 YouTube service = AppController.getGoogleServices().getYoutubeService();
                 try {
@@ -180,13 +180,5 @@ public class VideoListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void hideKeyboard() {
-        View focus = VideoListActivity.this.getCurrentFocus();
-        if (focus != null) {
-            InputMethodManager inputManager = (InputMethodManager) VideoListActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow(focus.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-        }
     }
 }

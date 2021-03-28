@@ -9,11 +9,11 @@
         app:showAsAction="always|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         />
-    <item
+    <!--<item
         android:id="@+id/video_list_item_advanced_search"
         android:icon="@drawable/ic_baseline_manage_search_24"
         android:title="Pesquisa avançada"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" />-->
 
     <item
     android:id="@+id/video_list_item_most_rated"

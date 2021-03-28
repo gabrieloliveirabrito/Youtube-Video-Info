@@ -1,11 +1,13 @@
 package com.gobrito.youtubevideoinfo.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class ThumbnailsActivity extends AppCompatActivity {
 
         Toolbar appBar = findViewById(R.id.video_thumbnail_appbar);
         setSupportActionBar(appBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         thumbnailMaxRes = findViewById(R.id.thumbnail_maxres);
         thumbnailStandard = findViewById(R.id.thumbnail_standard);
@@ -81,5 +84,15 @@ public class ThumbnailsActivity extends AppCompatActivity {
             startActivity(intent);
         } else
             Toast.makeText(this, "Nenhuma imagem de thumbnail foi carregada!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -133,6 +133,143 @@
                 android:layout_height="wrap_content"
                 android:text="Tags: "
                 android:textIsSelectable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Informações do conteúdo"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/video_info_contentDetails_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Duração: "
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/video_info_contentDetails_dimension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dimensão: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_contentDetails_definition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Definição: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_contentDetails_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Legendas: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_contentDetails_licensedContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conteúdo licensiado: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_contentDetails_projection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Projeção: "
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Informações estatísticas"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/video_info_statistics_viewCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Views: "
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/video_info_statistics_likeCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total de likes: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_statistics_dislikeCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total de dislikes: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_statistics_favoriteCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuários que favoritaram: "
+                android:textIsSelectable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/video_info_statistics_commentCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total de comentários: "
+                android:textIsSelectable="true" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
